@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+
+void ConvertTime(std::string s)
+{	
+	int isPM = s.find("PM");   		  //Find out if PM
+	s = s.substr(0, s.size()-2);       //Remove AM/PM
+	int firstSemi = s.find(":");
+	int hour = stoi(s.substr(0,firstSemi));
+	if ((isPM > 0  && hour != 12) || (isPM < 0  && hour == 12))
+	{
+	hour+=12;
+	if (hour == 24)
+	{
+	hour = 0;
+	s = "0" + s.substr(2,std::string::npos);
+	}
+	else
+	s = s.substr(2,std::string::npos);
+	s = std::to_string(hour) + s;
+	}
+	std::cout<<s;
+}
+
+int main()
+{
+	ConvertTime("07:45:00PM");  //19:45:00.
+	return 0;
+}

@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+
+/*
+So here's another method.
+We first load the number into a string in reverse by peeling off the end digits.
+Then we take that reverse string and iterate through it backwards and load it into another string called forward.
+Now forward and reverse contains the forward and reverse string versions of the number.
+If they are equal it's a palindrome.
+*/
+
+bool PalindromeTest(int num)
+{
+	std::string reverse, forward;
+	while(num>0)
+	{	
+	int digit = num%10;
+	num /= 10;
+	reverse.push_back(digit);
+	}
+
+	for (int i = reverse.size() - 1; i>=0; i--)
+	forward.push_back(reverse[i]);
+
+	if (forward == reverse) return true;
+	else return false;
+	
+}
+
+int main()
+{
+	std::cout<<std::boolalpha;
+	std::cout<<PalindromeTest(1225221);  //true
+	return 0;
+}

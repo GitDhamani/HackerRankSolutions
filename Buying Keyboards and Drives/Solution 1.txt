@@ -1,0 +1,27 @@
+#include <iostream>
+#include <vector>
+
+/*
+ * Complete the getMoneySpent function below.
+ Basically just iterating through the keyboard array and then the drive
+ array in a nested fashion, each time looking for a sum that meets the budget
+ criteria and is bigger than the current sum, if so store it as the new sum.
+ If this never happens, the original sum of -1 is returned as per the instructions.
+ */
+ 
+int getMoneySpent(std::vector<int> keyboards, std::vector<int> drives, int b) {
+   
+   int sum = -1;
+   std::vector<int> totalPrice;
+   for (auto e1: keyboards)
+   for (auto e2: drives)
+   if (e1 + e2 <= b && e1 + e2 > sum)
+   sum = e1 + e2;
+   return sum; 
+}
+
+int main()
+{
+	std::cout<<getMoneySpent({3,1},{5,2,8},10); //Keyboard Prices, Drive Prices, Budget
+	return 0;
+}

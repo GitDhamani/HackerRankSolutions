@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+
+/*
+If you look at the ASCII Table the Capital letters come first, then the lower case.
+The difference between them is 32. So to go from lower case to upper case you just
+subtract 32.
+*/
+
+std::string Uppercase(std::string str)
+{
+	for(auto& element: str)
+	element = (int)(element - 32);
+	return str;
+}
+
+int main()
+{
+	std::string str {"convert this string to uppercase"};
+	std::cout<<Uppercase(str);
+	return 0;
+}

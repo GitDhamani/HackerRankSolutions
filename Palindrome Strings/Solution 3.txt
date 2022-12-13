@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+/*
+The reverse algorithm just reverses an entire container of elements.
+We then compare it to the original to see if it's a palindrome.
+*/
+
+bool PalindromeTest(std::string sentence)
+{
+	std::string orig = sentence;
+	std::reverse(sentence.begin(), sentence.end());
+	return ( sentence == orig);
+}
+
+int main()
+{
+	std::cout<<std::boolalpha;
+	std::cout<<PalindromeTest("racecar");  //true
+	return 0;
+}

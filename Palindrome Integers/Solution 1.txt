@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+
+/*
+	So we take the end digits off the number
+	one by one and load them into a string.
+	We add 48 to the integer value to make sure
+	the character is the ASCII equivalent.
+	So then we have the reverse number in str.
+	Then we compare if the original number and 
+	its reverse are equal and if so = palindrome.
+*/
+
+bool PalindromeTest(int num)
+{
+	int originalnum = num;
+	std::string str {};
+	while (num > 0)
+	{
+	str.push_back(num%10 + 48); //Converts to ASCII Char
+	num/=10;
+	}
+	return (originalnum == std::stoi(str));
+}
+
+int main()
+{
+	std::cout<<std::boolalpha;
+	std::cout<<PalindromeTest(1225221);
+	return 0;
+}

@@ -1,0 +1,24 @@
+#include <iostream>
+#include <vector>
+
+/*
+The way this works is 1 = 0000 0001 and every odd number
+has its first bit as 1. So if you AND every number with 1
+you are basically asking if it is odd or even. If you get back
+0 it means it is even, otherwise it is odd.
+*/
+
+int CountEven(std::vector<int> vec)
+{
+	int count{};
+	for (auto element: vec)
+	if ((element & 1) == 0) count++; //Are you even
+	return count;
+}
+
+int main()
+{
+	std::vector<int> vec {1,2,3,4,5,6,7,8,9};
+	std::cout<<"Even Elements are: "<<CountEven(vec);
+	return 0;
+}

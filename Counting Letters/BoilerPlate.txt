@@ -1,0 +1,13 @@
+#include <iostream>
+#include <string>
+
+void countLetters(std::string phrase)
+{
+	//Write Code Here
+}
+
+int main()
+{
+	countLetters("Mohammed is the best");
+	return 0;
+}

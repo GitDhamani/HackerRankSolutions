@@ -1,0 +1,12 @@
+#include <iostream>
+
+void DrawStairCase(int n)
+{
+	//Write Code Here
+}
+
+int main()
+{
+	DrawStairCase(8);
+	return 0;
+}

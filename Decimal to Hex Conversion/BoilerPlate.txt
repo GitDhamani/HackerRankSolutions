@@ -1,0 +1,13 @@
+#include <iostream>
+#include <string>
+
+std::string ConvertHex(int num)
+{
+	//Write code Here
+}
+
+int main()
+{
+	std::cout<<"240 in Hex is: "<<ConvertHex(240); //F0
+	return 0;
+}

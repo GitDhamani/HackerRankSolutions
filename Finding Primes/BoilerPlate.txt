@@ -1,0 +1,13 @@
+#include <iostream>
+
+bool checkPrime(int num)
+{
+	//Write Code Here
+}
+
+int main()
+{
+	int i {5};
+	std::cout<<"This number is "<<(checkPrime(i)? "Prime.":"Not Prime.");
+	return 0;
+}

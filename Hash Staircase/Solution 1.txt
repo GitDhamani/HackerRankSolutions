@@ -1,0 +1,19 @@
+#include <iostream>
+
+void DrawStairCase(int n)
+{
+	for (int i = 1; i<=n; i++)
+	{
+	std::cout.width(n-i);
+	std::cout<<"";
+	for (int j = 0; j<i; j++)
+	std::cout<<"#";
+	std::cout<<std::endl;
+	}
+}
+
+int main()
+{
+	DrawStairCase(8);
+	return 0;
+}

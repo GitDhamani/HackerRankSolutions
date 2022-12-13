@@ -1,0 +1,34 @@
+#include <iostream>
+
+/*
+So we get the number in and set up a mask of 20(hex) which is the 6th bit on.
+We then AND this with the number to see if the result is above zero (true) or not.
+If the 6th bit was on, the result will be true, if not it will be false and we use a conditional
+statement to print this to the console.
+
+Then to toggle it, we can use the XOR operator (^) and we XOR the num with the mask (6th bit).
+Remember XOR gives a 1 whenever the bits are different.
+Since the mask has all the bits zero except for the 6th bit, the XOR will mean the original number
+will be preserved everywhere and on the 6th bit if it was already a 1, it will be turned off and if it were a 
+0 it will be turned on, essentially we're toggling it. We then print out its value. The std::hex flag is set to
+show all values in hex.
+*/
+
+void toggleBit(int num)
+{
+	std::cout<<"Num is: "<<std::hex<<num<<std::endl;
+	int mask {0x20}; //0010 0000 
+	std::cout<<"6th bit is "<<((num&mask)?"On.":"Off.")<<std::endl;
+	
+	//Toggle it
+	num ^= mask;
+	
+	std::cout<<"Num is now: "<<num<<std::endl;
+}	
+
+int main()
+{
+	toggleBit(58); //0011 1010 = 3A (6th Bit ON)
+	//toggleBit(26); //0001 1010 = 1A (6th Bit OFF)
+	return 0;
+}

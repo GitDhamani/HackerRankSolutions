@@ -1,0 +1,13 @@
+#include <iostream>
+
+bool PalindromeTest(int num)
+{
+	//Write Code Here
+}
+
+int main()
+{
+	std::cout<<std::boolalpha;
+	std::cout<<PalindromeTest(1225221);  //true
+	return 0;
+}

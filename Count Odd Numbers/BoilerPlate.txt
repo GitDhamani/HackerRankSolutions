@@ -1,0 +1,12 @@
+#include <iostream>
+
+int CountOdd(int num)
+{
+	//Insert Code Here
+}
+
+int main()
+{
+	std::cout<<"Count is: "<<CountOdd(10); //Should return 5
+	return 0;
+}

@@ -1,0 +1,18 @@
+#include <iostream>
+#include <vector>
+
+int CountEven(std::vector<int> vec)
+{
+	//Write Code Here
+	int count{};
+	for (auto element: vec)
+	if (element%2 == 0) count++;
+	return count;
+}
+
+int main()
+{
+	std::vector<int> vec {1,2,3,4,5,6,7,8,9};
+	std::cout<<"Even Elements are: "<<CountEven(vec);
+	return 0;
+}

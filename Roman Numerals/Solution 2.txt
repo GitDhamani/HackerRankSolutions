@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+#include <map>
+
+/*
+So this time I used a map to pair up each character with its equivalent value.
+Then you iterate through each character of the string and basically add its value to the count.
+However in some cases, some characters take on a negative value of themselves when they come before other characters.
+So I've highlighted those cases and made their values turn negative in those cases, so there's a subtraction.
+*/
+
+int romanToInt(std::string s) 
+{
+	std::map<char, int> mp {{'M',1000},{'C',100},{'D',500},{'L',50},{'X',10},{'V',5},{'I',1}};
+	int count{}, neg{1};
+	for (int i = 0; i<s.size(); i++)
+	{
+	neg = 1;
+	if ((s[i]=='I') && (s[i+1] == 'V' || s[i+1] == 'X')) neg = -1;
+	if ((s[i]=='X') && (s[i+1] == 'L' || s[i+1] == 'C')) neg = -1;
+	if ((s[i]=='C') && (s[i+1] == 'D' || s[i+1] == 'M')) neg = -1;
+	count+= neg * mp[s[i]];
+	}
+	return count;
+}
+
+int main()
+{
+	std::cout<<romanToInt("MCMXCIV");  //1994
+	return 0;
+}

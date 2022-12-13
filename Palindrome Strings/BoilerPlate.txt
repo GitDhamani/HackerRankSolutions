@@ -1,0 +1,14 @@
+#include <iostream>
+#include <string>
+
+bool PalindromeTest(std::string sentence)
+{
+	//Write code here
+}
+
+int main()
+{
+	std::cout<<std::boolalpha;
+	std::cout<<PalindromeTest("racecar");  //true
+	return 0;
+}

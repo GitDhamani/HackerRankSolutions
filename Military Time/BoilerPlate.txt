@@ -1,0 +1,13 @@
+#include <iostream>
+#include <string>
+
+void ConvertTime(std::string s)
+{	
+	//Write Code Here
+}
+
+int main()
+{
+	ConvertTime("07:45:00PM");  //19:45:00.
+	return 0;
+}

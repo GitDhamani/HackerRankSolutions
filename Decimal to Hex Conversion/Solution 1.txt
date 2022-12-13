@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+
+std::string ConvertHex(int num)
+{
+	std::string nums = "0123456789ABCDEF";
+	int Digit1 = num/16;
+	int Digit2 = num%16;
+	std::string hexstring;
+	hexstring.push_back(nums[Digit1]); 
+	hexstring.push_back(nums[Digit2]);
+	return hexstring;
+}
+
+int main()
+{
+	std::cout<<"240 in Hex is: "<<ConvertHex(240);
+	return 0;
+}

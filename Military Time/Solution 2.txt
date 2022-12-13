@@ -1,0 +1,33 @@
+/*
+ * Complete the 'timeConversion' function below.
+ *
+ * The function is expected to return a STRING.
+ * The function accepts STRING s as parameter.
+ */
+
+string timeConversion(string s) {
+    char res[8] = {};
+    auto firstSemi = s.find(":");
+    auto secondSemi = s.find(":",firstSemi+1);
+    int hour = stoi(s.substr(0,firstSemi));
+    int minute = stoi(s.substr(firstSemi+1,secondSemi));
+    int second = stoi(s.substr(secondSemi+1,secondSemi+3 ));
+    if (s.find("P")!= string::npos){
+        if (hour < 12){  
+            hour+=12;
+        }
+    } else {
+        if (hour == 12)
+            hour = 0;
+    }
+    auto str_hour = to_string(hour);
+    auto str_min = to_string(minute);
+    auto str_sec = to_string(second);
+    if (str_hour.size() != 2)
+        str_hour.insert(0,1,'0');
+    if (str_min.size() != 2)
+        str_min.insert(0,1,'0');
+    if (str_sec.size() != 2)
+        str_sec.insert(0,1,'0');
+    return str_hour + ":" + str_min + ":" + str_sec;
+}

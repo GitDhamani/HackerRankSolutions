@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cstdlib>  //needed for rand() and srand()
+#include <ctime>
+
+int main()
+{
+    //Seed a new random sequence.
+    srand(time(NULL));
+    
+    //Produce a Random number between 1-10
+    std::cout<<rand()%10 + 1<<std::endl;
+    std::cout<<rand()%10 + 1<<std::endl;
+    std::cout<<rand()%10 + 1<<std::endl;    
+    return 0;
+}
+
+/*
+If you were to run this program without srand(), you'd get the same output every time because what you get is a random sequence
+where each number in the sequence is different and everytime you call rand() you pull the next number in the sequence.
+
+However srand, randomises the seed so each sequence is different for every program run and it's randomly seeded because it's based
+on the current time. The time(NULL) function returns the number of seconds that have passed since Jan 1st 1970.
+
+If you wanted a random number between 1-20, you'd do rand()%20 + 1.
+The reason for the +1 is because when you %20 for example, you'll only get outputs of 0-19, so to get 1 - 20, you add 1.
+*/

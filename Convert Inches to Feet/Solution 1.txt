@@ -1,0 +1,14 @@
+#include <iostream>
+
+void convertInches(int num)
+{
+	int feet = num/12;
+	int inches = num%12;
+	std::cout<<feet<<"ft, "<<inches<<" inches.";
+}
+
+int main()
+{
+	convertInches(50); //4ft, 8inches.
+	return 0;
+}

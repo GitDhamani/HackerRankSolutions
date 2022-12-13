@@ -1,0 +1,12 @@
+#include <iostream>
+
+void convertInches(int num)
+{
+	//write code here
+}
+
+int main()
+{
+	convertInches(50);
+	return 0;
+}

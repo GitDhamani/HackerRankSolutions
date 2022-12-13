@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+
+/*
+So I take the string in by value because it's not important I change
+the real one. Then I iterate through it but it's important the changes
+I make are permanent so I can return an uppercase version so I make the
+for loop process each element by reference. And I just apply the toupper()
+function to it from the cstring class.
+*/
+
+std::string Uppercase(std::string str)
+{
+	for(auto& element: str)
+	element = std::toupper(element);
+	return str;
+}
+
+int main()
+{
+	std::string str {"convert this string to uppercase"};
+	std::cout<<Uppercase(str);
+	return 0;
+}

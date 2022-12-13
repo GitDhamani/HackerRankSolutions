@@ -1,0 +1,14 @@
+#include <iostream>
+#include <vector>
+ 
+int getMoneySpent(std::vector<int> keyboards, std::vector<int> drives, int b) {
+   	
+	//Write code Here
+}
+
+int main()
+{
+	//Keyboard Prices, Drive Prices, Budget
+	std::cout<<getMoneySpent({3,1},{5,2,8},10); //9
+	return 0;
+}

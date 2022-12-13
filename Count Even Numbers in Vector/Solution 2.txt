@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+/*
+So here I'm using the STL Algorithm: count_if and also a Lambda inside it
+which checks if the element modded with 2  equals zero is true, ie its even.
+If so the count_if receives a true from the lambda and the number is counted.
+*/
+
+int CountEven(std::vector<int> vec)
+{
+	//Write Code Here
+	return std::count_if(vec.begin(),vec.end(),[](int x){return (x%2==0);});
+}
+
+int main()
+{
+	std::vector<int> vec {1,2,3,4,5,6,7,8,9};
+	std::cout<<"Even Elements are: "<<CountEven(vec);
+	return 0;
+}

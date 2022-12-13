@@ -1,0 +1,13 @@
+#include <iostream>
+
+void toggleBit(int num)
+{
+	//Write your code here
+}	
+
+int main()
+{
+	toggleBit(58); //0011 1010 = 3A (6th Bit ON)
+	//toggleBit(26); //0001 1010 = 1A (6th Bit OFF)
+	return 0;
+}

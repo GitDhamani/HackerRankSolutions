@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+
+/*
+So essentially all I'm doing is going through the string adding values to the count for 
+every character. However I'm then checking what the previous character was in each case
+and if there's any deductions to be made I can update the count. I have to do double the
+deducations because lets say we have CM = 100 + 1000 = 2100, well this should be 1900 and
+so I need to deduct 2 x 100 from the count: 2100 - 200 = 1900.
+*/
+
+int returnint(char ch)
+{
+        if (ch=='M') return 1000;
+        else if (ch == 'C') return 100;
+        else if (ch == 'D') return 500;
+        else if (ch == 'L') return 50;
+        else if (ch == 'X') return 10;
+        else if (ch == 'V') return 5;
+        else if (ch == 'I') return 1;
+        return 0;  //Added because compiler complains that function may not always return.
+}
+
+int romanToInt(std::string s) 
+{
+        int count{};
+        for (int i = 0; i<s.size(); i++)
+        {
+            count += returnint(s[i]);
+            if (i == 0) continue;  //If first number no need to check anything else
+
+            switch(s[i])
+            {
+                case 'M':
+                if (s[i-1] == 'C') count-=200; 
+                break;
+
+                case 'D':
+                if (s[i-1] == 'C') count-=200;
+                break;
+
+                case 'C':
+                if (s[i-1] == 'X') count-=20;
+                break;
+
+                case 'L':
+                if (s[i-1] == 'X') count-=20;
+                break;
+
+                case 'V':
+                if (s[i-1] == 'I') count-=2; 
+                break;
+
+                case 'X':
+                if (s[i-1] == 'I') count-=2;
+                break;
+            }
+        }
+
+        return count;
+}
+
+int main()
+{
+	std::cout<<romanToInt("MCMXCIV");  //1994
+	return 0;
+}

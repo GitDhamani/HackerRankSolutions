@@ -1,0 +1,28 @@
+#include <iostream>
+
+/*
+A prime number has exactly two divisors, 1 and itself.
+So 1 is not a prime, because it only has a single divisor, itself which is also 1.
+So here we check how many times the number we're given divides cleanly into all the numbers
+from 1 up to it, and if we get exactly two it means it's a prime.
+*/
+
+
+bool checkPrime(int num)
+{
+	
+	int count{};
+	for (int i = 1; i<=num; i++)
+	if (num%i ==0)
+	count++;
+
+	if (count == 2) return true;
+	else return false;
+}
+
+int main()
+{
+	int i {6};
+	std::cout<<"This number is "<<(checkPrime(i)? "Prime.":"Not Prime.");
+	return 0;
+}

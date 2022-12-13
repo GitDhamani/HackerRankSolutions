@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+#include <algorithm>
+
+/*
+This time using the STL Algorithm For each which traverses through the
+container and then applies whichever function you wish to each element.
+In this case I'm applying the toupper function from the cstring class. 
+I'm copying each uppercase character into a new string then returning that.
+*/
+
+std::string Uppercase(std::string str)
+{
+	std::string upperstring;
+	std::for_each(str.begin(), str.end(), [&upperstring](char ch){upperstring.push_back(std::toupper(ch));});
+	return upperstring;
+}
+
+int main()
+{
+	std::string str {"convert this string to uppercase"};
+	std::cout<<Uppercase(str);
+	return 0;
+}

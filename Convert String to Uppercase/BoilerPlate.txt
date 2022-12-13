@@ -1,0 +1,14 @@
+#include <iostream>
+#include <string>
+
+std::string Uppercase(std::string str)
+{
+	//Write your code here
+}
+
+int main()
+{
+	std::string str {"convert this string to uppercase"};
+	std::cout<<Uppercase(str);
+	return 0;
+}

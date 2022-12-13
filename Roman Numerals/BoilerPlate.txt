@@ -1,0 +1,13 @@
+#include <iostream>
+#include <string>
+
+int romanToInt(std::string s) 
+{
+	//Write Code Here
+}
+
+int main()
+{
+	std::cout<<romanToInt("MCMXCIV");  //1994
+	return 0;
+}

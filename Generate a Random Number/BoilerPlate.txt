@@ -1,0 +1,7 @@
+#include <iostream>
+
+int main()
+{
+    //Output 3 Random numbers to the Console Window
+    return 0;
+}

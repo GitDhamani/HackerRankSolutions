@@ -1,0 +1,16 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+
+std::string ConvertHex(int num)
+{
+	std::ostringstream os;
+	os << std::hex << num;
+	return os.str();
+}
+
+int main()
+{
+	std::cout<<"240 in Hex is: "<<ConvertHex(240); //F0
+	return 0;
+}

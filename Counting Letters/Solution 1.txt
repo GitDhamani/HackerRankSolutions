@@ -1,0 +1,23 @@
+#include <iostream>
+#include <map>
+#include <string>
+
+/* Will print out how many times each character appears,
+the first line will tell you how many empty spaces, so it might look strange.
+*/
+
+void countLetters(std::string phrase)
+{
+	std::map<char, int> map;
+	for (auto ch: phrase)
+	map[ch]++;  //Frequency Container
+
+	for(auto ch: map)
+		std::cout<<ch.first<<" appears "<<ch.second<<" times."<<std::endl;
+}
+
+int main()
+{
+	countLetters("Mohammed is the best");
+	return 0;
+}

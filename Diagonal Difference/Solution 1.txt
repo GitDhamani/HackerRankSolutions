@@ -1,0 +1,21 @@
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+
+int Diff(std::vector<std::vector<int>> v)
+{
+	int LRSum{}, RLSum{};
+	for(int i = 0; i<v.size(); i++)
+	{
+	LRSum += v[i][i];
+	RLSum +=v[i][v.size()-1-i];
+	}
+	return abs(LRSum-RLSum);
+}
+
+int main()
+{
+	std::vector<std::vector<int>> vec = {{11,2,4},{4,5,6},{10,8,-12}};
+	std::cout<<"Diagonal Diff: "<<Diff(vec); //Should be 15
+	return 0;
+}

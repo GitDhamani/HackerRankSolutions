@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+
+/*
+So here you just peel off the end digit with %16 and add the hex value of it to a string 
+using concatenation. You then divide the number by 16 to discard that end digit.
+Now remember the number comes in as a decimal not hex, so we're doing the modding to get
+the equivalent value in hex. We keep doing this for as long as the number is greater than zero.
+We then return the string.
+*/
+
+
+std::string returnHex(int num)
+{
+	std::string chars = "0123456789ABCDEF";
+	std::string output{};
+	
+	do
+	{
+	output = chars[num%16] + output;   //Just like Push Front.
+	num/=16;
+	} while(num>0);
+	
+	return output;
+}
+
+
+int main()
+{
+	int num{};
+	std::cout<<"Please enter in a number: ";
+	std::cin>>num;
+	std::cout<<"In Hex This is: "<<returnHex(num);
+	return 0;
+}

@@ -1,0 +1,17 @@
+#include <iostream>
+#include <string>
+
+bool PalindromeTest(std::string sentence)
+{
+	std::string reverse{};
+	for (int i = sentence.size()-1; i>=0; i--)
+	reverse.push_back(sentence[i]);
+	return (sentence == reverse);
+}
+
+int main()
+{
+	std::cout<<std::boolalpha;
+	std::cout<<PalindromeTest("racecar");  //true
+	return 0;
+}

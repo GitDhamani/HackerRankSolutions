@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+/*
+ * Complete the 'birthdayCakeCandles' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts INTEGER_ARRAY candles as parameter.
+
+So here we use the STL Algorithm max_element() to return an iterator pointing to the highest element in the container.
+So we dereference this and then use this in the count algorithm to count how many of them there are.
+
+ */
+
+int birthdayCakeCandles(std::vector<int> candles) {
+return (std::count(candles.begin(), candles.end(), *std::max_element(candles.begin(),candles.end())));
+}
+
+int main()
+{
+	std::vector<int> vec {1,2,3,4,5,5,5};
+	std::cout<<"There are "<<birthdayCakeCandles(vec)<<" Birthday Candles";  //3
+	return 0;
+}

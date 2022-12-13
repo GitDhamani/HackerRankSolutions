@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+#include <algorithm>
+
+/*
+This time using the STL Algorithm transform which traverses through the
+container and then applies whichever function you wish to each element.
+In this case I'm applying the toupper function from the cstring class. 
+We use the :: scope resolution operator when we name a function like this.
+*/
+
+std::string Uppercase(std::string str)
+{
+	std::transform(str.begin(), str.end(), str.begin(), ::toupper);
+	return str;
+}
+
+int main()
+{
+	std::string str {"convert this string to uppercase"};
+	std::cout<<Uppercase(str);
+	return 0;
+}
